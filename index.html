@@ -2,18 +2,58 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Jogo APK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>test</title>
+    <!-- Biblioteca A-Frame para Gráficos 3D -->
+    <script src="https://aframe.io"></script>
     <style>
-        body { background: #222; color: white; font-family: Arial; text-align: center; margin: 0; overflow: hidden; }
-        #placar { font-size: 24px; margin-top: 20px; }
-        #alvo { width: 50px; height: 50px; background: lime; position: absolute; border-radius: 10px; cursor: pointer; }
+        body { margin: 0; overflow: hidden; }
+        /* Interface de UI do Jogador (HUD) */
+        #hud {
+            position: absolute; top: 20px; left: 20px;
+            color: #ff9900; font-family: monospace; font-size: 24px;
+            font-weight: bold; text-shadow: 2px 2px black; z-index: 10;
+            pointer-events: none;
+        }
+        /* Botão Analógico Virtual de Atirar para Telas Touch */
+        #btn-atirar {
+            position: absolute; bottom: 40px; right: 40px;
+            width: 80px; height: 80px; background: rgba(255, 0, 0, 0.6);
+            border: 3px solid white; border-radius: 50%; z-index: 10;
+        }
     </style>
 </head>
 <body>
-    <div id="placar">Pontos: <span id="pontos">0</span></div>
-    <div id="alvo"></div>
+
+    <div id="hud">KILLS: <span id="kills">0</span></div>
+    <div id="btn-atirar"></div>
+
+    <!-- Cenário Jogo 3D -->
+    <a-scene>
+        <!-- Céu do Mapa (Estilo Dust) -->
+        <a-sky color="#dbb480"></a-sky>
+
+        <!-- Chão de Areia -->
+        <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#8b7355"></a-plane>
+
+        <!-- Paredes/Caixas de Proteção (Obstáculos do Mapa) -->
+        <a-box position="-4 1.5 -8" width="3" height="3" depth="3" color="#cd853f"></a-box>
+        <a-box position="5 1 -6" width="2" height="2" depth="2" color="#cd853f"></a-box>
+        <a-box position="0 2 -15" width="8" height="4" depth="1" color="#555"></a-box>
+
+        <!-- Câmera do Jogador com a Mira (Crosshair) no Centro -->
+        
+            
+            
+        
+
+        <!-- Os Inimigos (Alvos Iniciais) -->
+        <a-cylinder class="inimigo" position="-3 1 -10" radius="0.5" height="2" color="#ff0000"></a-cylinder>
+        <a-cylinder class="inimigo" position="4 1 -12" radius="0.5" height="2" color="#ff0000"></a-cylinder>
+        <a-cylinder class="inimigo" position="0 1 -7" radius="0.5" height="2" color="#ff0000"></a-cylinder>
+    </a-scene>
 
     <script src="jogo.js"></script>
 </body>
 </html>
+
