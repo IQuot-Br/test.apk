@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget id="com.meujogo.clique" version="1.0.0" xmlns="http://w3.org" xmlns:cdv="http://apache.org">
+    <name>test</name>
+    <description>Meu primeiro jogo em APK feito no VS Code.</description>
+    <author email="seuemail@teste.com">Seu Nome</author>
+    <content src="index.html" />
+    <preference name="Orientation" value="portrait" />
+</widget>
