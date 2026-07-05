@@ -21,7 +21,7 @@ jobs:
     - name: Instalar o Cordova e criar projeto temporário
       run: |
         npm install -g cordova
-        cordova create sistema_build com.meujogo.clique "JogoDoClique"
+        cordova create sistema_build com.meujogo.clique "Cs2"
         rm -rf sistema_build/www/*
         cp index.html sistema_build/www/
         cp jogo.js sistema_build/www/ || true
