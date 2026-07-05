@@ -19,12 +19,14 @@ jobs:
         node-size: 20
 
     - name: Instalar o Cordova e criar projeto temporário
-      run: |
-        npm install -g cordova
-        cordova create sistema_build com.meujogo.clique "JogoDoClique"
-        rm -rf sistema_build/www/*
-        cp index.html sistema_build/www/
-        cp jogo.js sistema_build/www/
+  run: |
+    npm install -g cordova
+    rm -rf sistema_build
+    cordova create sistema_build com.cs.mobile "CSMobile"
+    rm -rf sistema_build/www/*
+    cp index.html sistema_build/www/
+    cp jogo.js sistema_build/www/ || true
+
 
     - name: Configurar o Java do Android
       uses: actions/setup-java@v4
